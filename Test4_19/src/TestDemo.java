@@ -9,6 +9,11 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
  */
 public class TestDemo {
     public static void main(String[] args) {
+        double x=2.0; int y=4;
+        x/=++y;
+        System.out.println( x);
+    }
+    public static void main3(String[] args) {
         /*int a=1;
         String b=a+"hhhh";
         System.out.println(b+2+'5'+"aaa");
