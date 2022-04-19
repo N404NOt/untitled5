@@ -9,6 +9,27 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
  */
 public class TestDemo {
     public static void main(String[] args) {
+        /*int a=1;
+        String b=a+"hhhh";
+        System.out.println(b+2+'5'+"aaa");
+        System.out.println("最大值:"+String.MAX_VALUE);*/
+        /*char a='a';
+        int b=1;
+        int c=a+b;
+        System.out.println(c);*/
+        /*String a="1234";
+        a="456789";
+        int b=Integer.parseInt(a)+2;
+        System.out.println(a);
+        System.out.println(b);*/
+       /* StringBuilder sb=new StringBuilder("hello");
+       // String sb="hello";
+
+        System.out.println(sb);*/
+        int a=4,b=6;
+        System.out.println(b+"a"+a+b);
+    }
+    public static void main2(String[] args) {
        // char b='高';
        // byte a=b;
         //long a=b;(
