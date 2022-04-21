@@ -1,5 +1,8 @@
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
+import java.util.Scanner;
+
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -9,6 +12,24 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
  */
 public class TestDemo {
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+    }
+    public static void main7(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        float n=scanner.nextFloat();
+        System.out.println(n);
+    }
+    public static void main6(String[] args) {
+        float a=0.0f;
+        int b=5;
+        System.out.println(b/a);
+    }
+    public static void main5(String[] args) {
+        boolean a=true;
+        boolean b=true;
+        System.out.println(a==b);
+    }
+    public static void main4(String[] args) {
         double x=2.0; int y=4;
         x/=++y;
         System.out.println( x);
