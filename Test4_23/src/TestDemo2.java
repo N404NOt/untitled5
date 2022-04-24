@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -7,10 +9,13 @@
  */
 public class TestDemo2 {
     public static void main(String[] args) {
-        for (int i = 0; i < ; i++) {
-            
-        }
+        Random random=new Random(20222);
+        int ranNum=random.nextInt(100);
+        System.out.println(ranNum);
+
+
     }
+
     public static void main2(String[] args) {
         int i=0;
         while(i<=100){
