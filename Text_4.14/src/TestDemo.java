@@ -16,6 +16,15 @@ import java.util.function.DoubleToIntFunction;
  */
  public class TestDemo {
     public static void main(String[] args) {
+        int count=0;
+        for (int i = 1; i <100 ; i++) {
+            int b=i%10;
+            int t=i/10;
+            if((b==9)||(t==9)){
+                count++;
+            }
+        }
+        System.out.println(count);
 
     }
     public static void main15(String[] args) {
