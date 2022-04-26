@@ -16,6 +16,18 @@ import java.util.function.DoubleToIntFunction;
  */
  public class TestDemo {
     public static void main(String[] args) {
+        Scanner scanner =new Scanner(System.in);
+        if(scanner.hasNext()){
+            String a="aaaa";
+            a=scanner.next();
+            System.out.println(a);
+        }
+    }
+    public static void main17(String[] args) {
+        int a=9;
+       double b= Math.sqrt(a);
+    }
+    public static void main16(String[] args) {
         int count=0;
         for (int i = 1; i <100 ; i++) {
             int b=i%10;
