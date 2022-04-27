@@ -1,11 +1,5 @@
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.function.DoubleToIntFunction;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,7 +9,74 @@ import java.util.function.DoubleToIntFunction;
  * Time: 22:23
  */
  public class TestDemo {
+     public static int nFactor(int n){
+         int sum=1;
+         for (int i = 1; i < n; i++) {
+             sum+=sum*i;
+         }
+         return sum;
+     }
     public static void main(String[] args) {
+        System.out.println(nFactor(4));
+
+    }
+     //在同一个类中定义多个方法：要求不仅可以求两个整数的最大值，还可以求两个小数的最大值，以及两个小数和一个整数的大小关系
+    public static double treMax(int a, double b, double c){
+        double t=a>b?a:b;
+        return t>c?t:c;
+    }
+    public static double towFMax(double a, double b){
+        return  (a>b?a:b);
+    }
+    public static int towIMax(int a,int b){
+        return a>b?a:b;
+    }
+    public static void main21(String[] args) {
+        System.out.println(towIMax(4, 9));
+        System.out.println(towFMax(9.6, 4.1));
+        System.out.println(treMax(9, 1.1, 4.4));
+
+
+    }
+     //有一组数据，只有一个数字是出现一次，其他是两次，请找出这个数字。
+    public static int findDog(int[]arr,int n){
+        int num=0;
+        for (int i = 0; i < n; i++) {
+            num^=arr[i];
+        }
+        return num;
+    }
+    public static void main20(String[] args) {
+        int [] arr={1,1,9,9,4};
+        int n=arr.length;
+        System.out.println(findDog(arr,n));
+
+    }
+    //求1！+2！+3！+4！+........+n!的和
+    public static int nSum(int n){
+        int sum=1;
+        int num=1;
+        for (int i = 2; i <=n ; i++) {
+            sum=sum*i;
+            num=num+sum;
+        }
+        return num;
+    }
+     //在同一个类中,分别定义求两个整数的方法 和 三个小数之和的方法。 并执行代码，求出结果
+    public static int towSum(int a,int b){
+        return a+b;
+    }
+    public static double treSum(double a,double b, double c){
+        return a+b+c;
+    }
+
+    public static void main19(String[] args) {
+    /*    System.out.println(towSum(4,5));
+        System.out.println(treSum(1.2,6.3,2.4));*/
+        //System.out.println(Math.pow(2,4));
+        System.out.println(nSum(4));
+    }
+    public static void main18(String[] args) {
         Scanner scanner =new Scanner(System.in);
         if(scanner.hasNext()){
             String a="aaaa";
