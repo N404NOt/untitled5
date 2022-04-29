@@ -1,3 +1,7 @@
+
+import java.util.*;
+/*import java.util.Arrays;
+import java.util.Scanner;*/
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -6,11 +10,57 @@
  * Time: 23:46
  */
 public class TestDemo {
+    public static void main(String[] args) {
+        int[]arr={1,2,3,4};
+        arr=new int[]{2,3,4,5,6};
+        //arr[5]=6;
+        int []arr2=new int[2];
+       // int[] arr3=new int[2];
+        System.out.println(Arrays.toString(arr2));
+    }
+    public static int numFactorial(int n){
+        int tmp;
+        if(n==1){
+            return 1;
+        }else {
+            tmp = n*numFactorial(n - 1);
+        }
+        return tmp;
+    }
+
+    public static void main8(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        System.out.println(numFactorial(n));
+    }
+
+    //This method finds 1to the sum of the number itself
+    public static int numToSum(int n){
+        int tmp;
+        if(n==1){
+            return 1;
+        }else{
+           tmp=numToSum(n-1)+n;
+        }
+        return tmp;
+    }
+
+    public static void main7(String[] args) {
+        System.out.println(numToSum(5));
+    }
     //Sequential print each bit of a num
     public static void seqPrtEcNm(int n){
-        if(n<0){
+        if(n<10){
+            System.out.print(n+" ");
             return;
+        }else{
+            seqPrtEcNm(n/10);
+            System.out.print(n%10+" ");
         }
+    }
+
+    public static void main6(String[] args) {
+        seqPrtEcNm(1234);
     }
     // Print backwards each bit of a num
     public static void prtEcNm(int n){
