@@ -10,37 +10,52 @@ import java.util.Stack;
  * Time: 12:12
  */
 public class Test1 {
-    public static boolean isValid(String s) {
-        if (s.length() == 1) {
-            return false;
-        }
+    public static void isValid(String s) {
         Stack<Character> stack = new Stack<>();
+        char c='0';
         for (char ch : s.toCharArray()) {
+            c=ch;
+            if(ch=='.'){
+                break;
+            }
             if (ch == '(') {
                 stack.push(')');
+                continue;
             } else if (ch == '[') {
                 stack.push(']');
-            } else if (ch == '{') {
+                continue;
+            } else if (ch == '/') {
+                stack.push('*/');
+                continue;
+            }else if (ch == '{') {
                 stack.push('}');
-            } else if (stack.empty() || stack.pop() != ch) {
-                return false;
+                continue;
+            } else if (stack.empty()) {
+                System.out.println("No");
+                if(ch==')'||ch=='}'||ch==']'){
+                    System.out.println("?-"+ch);
+                    return;
+                }else if(stack.pop() != ch){
+                    System.out.println("No");
+                    System.out.println(c+"-?");
+                    return;
+                }
             }
         }
-        return stack.empty();
+        if (!stack.empty()) {
+            System.out.println("No");
+                System.out.println(c+"-?");
+                return;
+            }
+        System.out.println("Yes");
     }
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        String s;
-        s=scanner.next();
-        boolean a=isValid(s);
-        if(a==false){
-            System.out.println("false");
-        }else{
-            System.out.println("true");
-        }
-
+        String s=scanner.next();
+        isValid(s);
     }
 }
+
 
 
