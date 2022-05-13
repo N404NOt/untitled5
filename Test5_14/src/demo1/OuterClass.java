@@ -35,7 +35,7 @@ public class OuterClass {
     static void method2() {
         System.out.println("method2");
     }
-    static class InnerClass {
+    public class InnerClass {
         //data1=16;
         final static int data2=22;
 
