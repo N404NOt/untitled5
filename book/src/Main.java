@@ -18,7 +18,6 @@ public class Main {
         Scanner scanner=new Scanner(System.in);
         String name=scanner.nextLine();
         System.out.println("1:管理员   2：用户");
-        System.out.println("hello "+name);
         int choice=scanner.nextInt();
         if(choice==1){
             return new Adminer(name);

@@ -24,6 +24,7 @@ public class Adminer extends User {
     }
 
     public int menu() {
+        System.out.println("hello "+name);
         System.out.println("1.显示图书");
         System.out.println("2.查找图书");
         System.out.println("3.添加图书");

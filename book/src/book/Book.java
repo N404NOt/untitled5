@@ -12,7 +12,7 @@ public class Book {
     private String author;
     private int price;
     private String type;
-    private String isBrrowed;
+    private boolean isBrrowed;
 
     public Book(String name, String author, int price, String type) {
         this.name = name;
@@ -37,7 +37,7 @@ public class Book {
         return type;
     }
 
-    public String getIsBrrowed() {
+    public Boolean getIsBrrowed() {
         return isBrrowed;
     }
 
@@ -57,7 +57,7 @@ public class Book {
         this.type = type;
     }
 
-    public void setIsBrrowed(String isBrrowed) {
+    public void setIsBrrowed(Boolean isBrrowed) {
         this.isBrrowed = isBrrowed;
     }
 
@@ -68,7 +68,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", price=" + price +
                 ", type='" + type + '\'' +
-                ", isBrrowed='" + isBrrowed + '\'' +
+                ((isBrrowed==true)?"已经被借出":"未被借出") +
                 '}';
     }
 }

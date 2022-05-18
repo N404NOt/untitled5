@@ -13,5 +13,6 @@ public class AddOperation implements IOperation{
     @Override
     public void work(BookList bookList) {
         System.out.println("添加图书");
+
     }
 }
