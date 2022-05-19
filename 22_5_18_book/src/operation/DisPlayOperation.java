@@ -13,5 +13,9 @@ public class DisPlayOperation implements IOperation{
     @Override
     public void work(BookList bookList) {
         System.out.println("显示图书");
+        int size=bookList.getUsedSize();
+        for (int i = 0; i < size; i++) {
+            System.out.println(bookList.getBooks(i));
+        }
     }
 }

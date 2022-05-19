@@ -26,4 +26,8 @@ public class BookList {
     public void setUsedSize(int usedSize) {
         this.usedSize = usedSize;
     }
+
+    public void setBooks(int pos,Book book) {
+        this.books[pos] = book;
+    }
 }

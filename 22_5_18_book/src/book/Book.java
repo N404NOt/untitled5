@@ -20,7 +20,8 @@ public class Book {
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", price=" + price +
-                ", isBorrowed=" + isBorrowed +
+                ", isBorrowed=" +
+                ((isBorrowed==true)?"已被借阅":"未被借阅" )+
                 ", type='" + type + '\'' +
                 '}';
     }

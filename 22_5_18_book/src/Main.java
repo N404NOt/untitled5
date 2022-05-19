@@ -29,8 +29,9 @@ public class Main {
     public static void main(String[] args) {
         BookList bookList=new BookList();
         User user=login();
-        int choice=user.menu();
-        user.doOperation(choice,bookList);
-
+        while(true) {
+            int choice = user.menu();
+            user.doOperation(choice, bookList);
+        }
     }
 }
