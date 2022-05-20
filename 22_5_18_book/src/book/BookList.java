@@ -1,5 +1,7 @@
 package book;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -11,11 +13,12 @@ public class BookList {
     Book books[]=new Book[10];
     private int usedSize;
     public BookList() {
-        books[0]=new Book("C语言原来如此", "比特鹏哥", 111, "学习");
-        books[1]=new Book("Java学习很简单", "比特大博哥", 222, "学习");
-        books[2]=new Book("C++学习一下吧", "比特杭哥", 333, "学习");
+        books[0]=new Book("西游记", "吴承恩", 111, "名著");
+        books[1]=new Book("三国演义", "罗贯中", 222, "名著");
+        books[2]=new Book("红楼梦", "曹雪芹", 333, "名著");
         usedSize=3;
     }
+
     public Book getBooks(int pos) {
         return books[pos];
     }

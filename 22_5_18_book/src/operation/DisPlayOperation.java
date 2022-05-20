@@ -15,7 +15,7 @@ public class DisPlayOperation implements IOperation{
         System.out.println("显示图书");
         int size=bookList.getUsedSize();
         for (int i = 0; i < size; i++) {
-            System.out.println(bookList.getBooks(i));
+            //System.out.println(bookList.getBooks(i));
         }
     }
 }
