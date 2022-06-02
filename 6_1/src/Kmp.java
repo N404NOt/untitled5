@@ -6,7 +6,7 @@
  * Time: 16:59
  */
 public class Kmp {
-    public  static  void getNext(String sub,int[] next) {
+    public static void getNext(String sub,int[] next) {
         next[0]=-1;
         next[1]=0;
         int k=0;
@@ -21,8 +21,8 @@ public class Kmp {
                 k=next[k];
             }
         }
-        /*for (; i < subLength; i++) {
-            if(sub.charAt(i-1)==sub.charAt(k)) {
+      /*  for (; i < subLength; i++) {
+            if(k==-1||sub.charAt(i-1)==sub.charAt(k)) {
                 next[i]=k+1;
                 i++;
                 k++;
@@ -38,7 +38,7 @@ public class Kmp {
         int subLength=sub.length();
         if(subLength>strLength-pos) return -1;
         int[] next=new int[subLength];
-       getNext(sub,next);
+        getNext(sub,next);
         int i=pos;
         int j=0;
         while(i<strLength&&j<subLength) {
@@ -56,6 +56,10 @@ public class Kmp {
         return -1;
     }
     public static void main(String[] args) {
+        String str="asdfabcaefre";
+        String sub="abcae";
+        int pos=KMP(str,sub,0);
+        System.out.println(pos);
 
     }
 }
