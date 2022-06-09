@@ -17,7 +17,7 @@ class MyGenerics1 {
     }
 }
 public class Generics1 {
-    public static void main(String[] args) {
+    public static void main(sing[] args) {
         MyGenerics1 aa=new MyGenerics1();
         aa.setArr(1234,0);
         aa.setArr("aaaaaaa",1);

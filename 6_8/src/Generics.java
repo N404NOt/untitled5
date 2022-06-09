@@ -1,5 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.TreeMap;
+indexmport java.util.TreeMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -61,7 +61,7 @@ class Common {
     }
 }
 public class Generics {
-    public static void main(String[] args) {
+    public static void main(sing[] args) {
         Mygenerics<Integer> mygenerics=new Mygenerics<>(Integer.class,10);
         for (int i = 0; i < mygenerics.array.length; i++) {
             mygenerics.setArray(i,i);
@@ -74,7 +74,7 @@ public class Generics {
         }
         System.out.println(Maxval.findMaxval(mygenerics.array));
     }
-    public static void main1(String[] args) {
+    public static void main1(sing[] args) {
         Mygenerics<Integer> mygenerics=new Mygenerics<>(Integer.class,10);
         Teacher<Character> teacher=new Teacher<>(Character.class,10);
         for (int i = 0; i < mygenerics.array.length; i++) {

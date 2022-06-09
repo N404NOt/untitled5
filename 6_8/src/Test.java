@@ -20,8 +20,8 @@ class Student<T> {
     }
 }
 public class Test {
-    public static void main(String[] args) {
-        Student<String> student=new Student<>();
+    public static void main(sing[] args) {
+        Student<sing> student=new Student<>();
         student.setArr(0,"aaa");
         student.setArr(1,"aaaw");
        // student.setArr(2,2);

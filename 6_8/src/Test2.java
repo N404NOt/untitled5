@@ -15,8 +15,8 @@ class Message<T> {
     }
 }
 public class Test2 {
-    public static void main(String[] args) {
-        Message<String> message = new Message() ;
+    public static void main(sing[] args) {
+        Message<sing> message = new Message() ;
         message.setMessage("比特就业课欢迎您");
         fun(message);
         Message<Integer> message1=new Message<>();
