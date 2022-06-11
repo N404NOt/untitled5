@@ -7,7 +7,8 @@ package LeetCode;
  * Date: 2022-06-11
  * Time: 19:56
  */
-class Solution {
+//
+class Solution2 {
     public String countAndSay(int n) {
         StringBuilder res = new StringBuilder("1");
         StringBuilder prev;
