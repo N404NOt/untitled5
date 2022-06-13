@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
+import com.sun.corba.se.impl.orbutil.closure.Constant;
+
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +11,26 @@ import java.util.ListIterator;
  */
 public class Demo1 {
     public static void main(String[] args) {
+        ArrayList<Integer> list1=new ArrayList<>();
+        list1.add(45);
+        list1.add(1);
+        list1.add(-9);
+        list1.add(32);
+        ListIterator<Integer> lt=list1.listIterator();
+        while(lt.hasNext()) {
+            System.out.print(lt.next()+" ");
+        }
+        System.out.println();
+        Collections.sort(list1);
+        ListIterator<Integer> lt2=list1.listIterator();
+        while(lt2.hasNext()) {
+            System.out.print(lt2.next()+" ");
+        }
+        System.out.println();
+        Collections.reverse(list1);
+        System.out.println(list1);
+    }
+    public static void main1(String[] args) {
         ArrayList<String> list1=new ArrayList<>();
         List<String> list=new ArrayList<>(10);
         list.add("aaa");
