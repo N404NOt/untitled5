@@ -20,13 +20,13 @@ public class playPoker {
         System.out.println(Cards);
         //Shuffle shuffle=new Shuffle();
         Shuffle.swap(Cards);
-        System.out.println("小凯子很专业的洗完了牌");
+        System.out.println("小卡拉米很专业的洗完了牌");
         System.out.println(Cards);
-        System.out.println("辛劳的小凯子在线发牌");
+        System.out.println("性感小卡拉米在线发牌");
         ArrayList<ArrayList<Poker>> players=new ArrayList<>(PlayersNumber);
         players=Game.boomGoldFlower(Cards);
         for (int i = 0; i < PlayersNumber; i++) {
-            System.out.println("玩家"+i);
+            System.out.println("玩家"+i+1);
             System.out.println(players.get(i));
         }
 

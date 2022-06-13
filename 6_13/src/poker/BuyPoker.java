@@ -40,7 +40,7 @@ class BuyPoker {
                 Cards.add(poker);
             }
         }
-        System.out.println("徐凯买了一副牌并且打开了这副牌");
+        System.out.println("小卡拉米拿来了一副新的扑克牌打开一看还真是新的除了没有大小王");
         return Cards;
     }
     public ArrayList<Poker> getPoker() {
