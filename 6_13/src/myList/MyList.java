@@ -1,5 +1,6 @@
 package myList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -10,6 +11,7 @@ import java.util.Arrays;
  * Time: 10:26
  */
 class MyArrayList<E> {
+    ArrayList  arrayList =new ArrayList();
     private  Object[] elementDate;//初始数组
     private int usedSize;
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
