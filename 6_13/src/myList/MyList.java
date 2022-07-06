@@ -21,6 +21,14 @@ class MyArrayList<E> {
     public MyArrayList() {
         this.elementDate=DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
     }
+    int indexOf(Object e) {
+        for (int i = 0; i < elementDate.length ;i++) {
+            if(e==elementDate[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     public MyArrayList(int initialCapacity) {
         if(initialCapacity>0) {

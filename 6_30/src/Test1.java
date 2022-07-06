@@ -32,8 +32,6 @@ public class Test1 {
        int[] nums2={2,5,6};
        Solution solution=new Solution();
        solution.merge(nums1,3,nums2,3);
-
-
    }
 }
 class Solution1 {
