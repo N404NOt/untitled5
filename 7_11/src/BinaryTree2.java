@@ -10,7 +10,7 @@ import java.util.Queue;
  * Date: 2022-07-11
  * Time: 16:19
  */
-public class BinaryTree {
+public class BinaryTree2 {
 
     static class TreeNode {
         public char val;
