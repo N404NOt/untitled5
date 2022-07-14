@@ -8,7 +8,7 @@
 class treeNode {
     char val;
     treeNode lchid;
-    treeNode r
+    treeNode r;
 }
 public class Demo1 {
 }
