@@ -41,7 +41,7 @@ public class TestHeap {
         //最起码是有左孩子
         while (child < len) {
             //判断 左孩子 和 右孩子  谁最大,前提是  必须有  右孩子
-            if(child+1 < usedSize && elem[child] < elem[child+1]) {
+            if(child+1 < len && elem[child] < elem[child+1]) {
                 child++;//此时 保存了最大值的下标
             }
             if(elem[child] > elem[parent]) {
