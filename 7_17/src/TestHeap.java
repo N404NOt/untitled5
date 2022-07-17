@@ -1,3 +1,5 @@
+import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
+
 import java.util.Arrays;
 
 /**
@@ -67,7 +69,7 @@ public class TestHeap {
             }
         }
     }
-    private void swap(int[] array,int i,int j) {
+    private static void swap(int[] array, int i, int j) {
         int tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
@@ -142,5 +144,68 @@ public class TestHeap {
             }
         }
     }
+    public void selectSortSolo(int[] arry) {
+        for (int left = 0; left < arry.length-1; left++) {
+            int minIndex = left;
+            for (int i = left+1; i < arry.length; i++) {
+                if (arry[i] > arry[minIndex]) {
+                }
+            }
+            swap(arry,left,minIndex);
+        }
+    }
+    public void selectSort(int[] arry) {
+        int left=0;
+        int right = arry.length-1;
+        int minIndex=0;
+        int maxIndex=0;
+        while (left < right)
+            minIndex = left;
+            maxIndex = left;
+        for (int i = left+1; i <= right; i++) {
+            if(arry[i] < arry[minIndex]) {
+                minIndex = i;
+            }
+            if(arry[i] > arry[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+        swap(arry,left,minIndex);
+        if (maxIndex == left) {
+            maxIndex = minIndex;
+        }
+        swap(arry,right,maxIndex);
+        left++;
+        right--;
+    }
+    public static int contion(int[] arry,int left,int right) {
+        int key = arry[left];
+        int l=left+1;
+        int t = left;
+        while (l < right) {
+            while (arry[right] < key) {
+                right--;
+            }
+            while (arry[l] > key) {
+                l++;
+            }
+            swap(arry,l,right);
+        }
+        swap(arry,t,l);
+        return l;
+    }
+    public void quick(int[] arry,int left,int right) {
+        if(left <= right) {
+            return ;
+        }
+        int contion = contion(arry,left,right);
+        quick(arry,left,contion-1);
+        quick(arry,contion+1,right);
+
+    }
+        public void quickSort(int[] arry,int start,int end) {
+             quick(arry,0,arry.length-1);
+        }
+
 
 }
