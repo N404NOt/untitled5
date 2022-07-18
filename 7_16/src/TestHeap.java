@@ -13,6 +13,11 @@ public class TestHeap {
         this.elem = new int[10];
         this.usedSize = 0;
     }
+    public TestHeap(int[] arr) {
+        elem = arr;
+        usedSize = arr.length;
+    }
+
 
     public void initArray(int[] array) {
         elem = Arrays.copyOf(array,array.length);
@@ -85,7 +90,6 @@ public class TestHeap {
         shiftUp(usedSize-1);
     }
 
-
     public boolean isFull() {
         return usedSize == elem.length;
     }
@@ -106,6 +110,13 @@ public class TestHeap {
 
     public boolean isEmpty() {
         return usedSize == 0;
+    }
+    public static void main(String[] args) {
+        int[] arr= {9, 1, 5, 3, 4, 8, 6, 0};
+        TestHeap myHeap = new TestHeap(arr);
+        System.out.println(Arrays.toString(myHeap.elem));
+        myHeap.createHeap();
+        System.out.println(Arrays.toString(myHeap.elem));
     }
 
 }
