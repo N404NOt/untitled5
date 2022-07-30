@@ -104,15 +104,12 @@ public class Sort {
                 if(array[index] < array[minPos]){
                     minPos = index;
                 }
-
                 index++;
             }
-
             // 在[begin, end]区间中，已经找到了最小与最小元素的位置
        if(maxPos != end){
                 swap(array, maxPos, end);
             }
-
             if(minPos == end){
                 minPos = maxPos;
             }
@@ -131,12 +128,10 @@ public class Sort {
         // child标记parent的左孩子---parent可能有左没有右
         int child = parent*2 + 1;
         while(child < size){   // 如果循环条件成立：parent的左孩子一定是成立的
-
             // 右孩子存在的情况下，找左右孩子中最大的孩子
             if(child+1 < size && array[child+1] > array[child]){
                 child += 1;
             }
-
             // 检测parent是否满足堆的特性
             if(array[parent] < array[child]){
                 swap(array, parent, child);
@@ -147,7 +142,6 @@ public class Sort {
             }
         }
     }
-
     // 时间复杂度：O(NlogN)
 // 空间复杂度：O(1)
 // 稳定性：不稳定
