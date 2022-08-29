@@ -23,7 +23,7 @@ public class JDBCSelect {
         //创建连接
         Connection connection = dataSource.getConnection();
         String sql = "select* from student";
-        PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = connection.prepareStatement(sql);
       //  statement.setString(1,"student");
         ResultSet resultSet = statement.executeQuery();
         while(resultSet.next()){
