@@ -119,7 +119,7 @@ public class Tertris extends JFrame implements KeyListener {
         //初始化游戏状态标签
         label1 = new JLabel("游戏状态：正在游戏中");
         //初始化游戏分数标签
-        label = new JLabel("游戏得分为：0");
+        label = new JLabel("游戏的分为》》》》》》: 0  " );
         initGamePanel();
         initExplainPanel();
         initWindow();
@@ -262,7 +262,7 @@ public class Tertris extends JFrame implements KeyListener {
         score +=temp;
 
         //显示变化后的分数
-        label.setText("游戏的分为>>>>" + score);
+        label.setText("游戏的分为》》》》》》: " + score+"  ");
     }
     //刷新移除某一行后的游戏界面的方法
     public void reflesh(int row) {
