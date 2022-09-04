@@ -5,6 +5,78 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.concurrent.TimeUnit;
+
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.*;
+import org.omg.CORBA.Current;
+
+/*class Play0 extends Thread{
+    Player player;
+
+    String music;
+    public Play0(String file) {
+        this.music = file;
+    }
+    public void run() {
+        try {
+            play();
+        } catch (FileNotFoundException | JavaLayerException e) {
+            e.printStackTrace();
+        }
+    }
+    public void play() throws FileNotFoundException, JavaLayerException {
+        BufferedInputStream buffer = new BufferedInputStream(new FileInputStream(music));
+        player = new Player(buffer);
+        player.play();
+
+    }
+}*/
+class Play implements Runnable {
+
+    private Player player = null;
+    private Thread thread = null;
+
+    public Play(String file) {
+        try {
+            player = new Player(new FileInputStream(file));
+        } catch (JavaLayerException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void run() {
+        try {
+            while (true) {
+                player.play();
+                Thread.sleep(1000);
+            }
+        } catch (JavaLayerException ex) {
+            System.err.println("Problem playing audio: " + ex);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void start() {
+        thread = new Thread(this, "Player thread");
+        thread.start();
+    }
+
+    public void stop() {
+        player.close();
+        thread = null;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+}
 
 /**
  * Created with IntelliJ IDEA.
@@ -41,6 +113,33 @@ public class Tertris extends JFrame implements KeyListener {
     boolean game_pause = false;
     //定义一个变量记录按下赞同键的次数
     int pause_time = 0;
+    int key = 0;
+    Play play0 = new Play("D:\\CloudMusic\\俄罗斯方块 BGM.mp3");
+    //Player player = play0.get
+    Thread t1 = new Thread(() ->{
+        while (true) {
+            new Play("D:\\CloudMusic\\Cheetah Mobile - 第八关 Tetris 俄罗斯方块.mp3").start();
+            try {
+                Thread.sleep(10_0000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    });
+    /*Thread t = new Thread(() ->{
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                play0.start();
+                TimeUnit.MINUTES.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("8888888888888888888888888");
+
+
+    });*/
+
     //初始化窗口
     public void initWindow(){
         //设置窗口大小
@@ -128,11 +227,19 @@ public class Tertris extends JFrame implements KeyListener {
     }
 
     public static void main(String[] args) {
+
+
         Tertris tertris = new Tertris();
+        tertris.start();
         tertris.game_begin();
+    }
+    public void start() {
+        //t.start();
+        play0.start();
     }
     //开始游戏的方法
     public void game_begin() {
+
         while (true) {
             //判断游戏是否结束
             if(!isrunning) {
@@ -180,6 +287,8 @@ public class Tertris extends JFrame implements KeyListener {
                             if(sum == (game_y - 2)) {
                                 //消除j这一行
                                 removeRow(j);
+                                new Play("C:\\Users\\无泥菩\\人群欢呼鼓掌.mp3").start();
+
                             }
                         }
                         //判断游戏是否失败
@@ -255,11 +364,17 @@ public class Tertris extends JFrame implements KeyListener {
         reflesh(row);
 
         //方块加速
-        if(time > temp) {
+        if(time > temp && time >=200) {
             time -=temp;
         }
 
         score +=temp;
+        if (score == 300) {
+            //t.interrupt();
+            //play0.close;
+            play0.stop();
+            t1.start();
+        }
 
         //显示变化后的分数
         label.setText("游戏的分为》》》》》》: " + score+"  ");
